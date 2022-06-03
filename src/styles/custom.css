@@ -1,0 +1,31 @@
+body {
+    background-color: rgb(130, 244, 118);
+}
+
+ul {
+    width: 100%;
+}
+
+li {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.far {
+    display: flex;
+    visibility: hidden;
+}
+
+li:hover .far {
+    visibility: visible;
+}
+
+.todo-input {
+    width: 100%;
+    font-size: 1.5rem;
+    border: none;
+    outline-color: #fff;
+    outline-style: none;
+}
