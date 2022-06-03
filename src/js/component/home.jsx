@@ -10,7 +10,7 @@ const Home = () => {
 	useEffect(() => {});
 	return (
 		<div className="container">
-			<div className="row d-flex justify-content-center">
+			<div className="row d-flex justify-content-center position-absolute top-0 start-0 translate-middle">
 				<h1>ToDo List</h1>
 			</div>
 			<div className="row border-top border-right border-left">
