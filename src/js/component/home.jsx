@@ -7,11 +7,50 @@ import { Task } from "./Task.jsx";
 const Home = () => {
 	const [todoTask, setTask] = useState([]);
 	const [inputValue, setInputValue] = useState("");
-	useEffect(() => {});
+	useEffect(() => {
+		// fetch("https://assets.breatheco.de/apis/fake/todos/user/INVIiICTUS", {
+		// 	method: "POST", // or 'PUT'
+		// 	body: JSON.stringify([]), // data can be `string` or {object}!
+		// 	headers: {
+		// 		"Content-Type": "application/json",
+		// 	},
+		// })
+		// 	.then((res) => res.json())
+		// 	.catch((error) => console.error("Error:", error))
+		// 	.then((response) => console.log("Success:", response));
+	}, []);
+
+	useEffect(() => {
+		fetch("https://assets.breatheco.de/apis/fake/todos/user/INVIiICTUS", {
+			method: "PUT",
+			body: JSON.stringify(todos),
+			headers: {s				"Content-Type": "application/json",
+			},
+		})
+			.then((resp) => {
+				console.log(resp.ok); // Será true (verdad) si la respuesta es exitosa.
+				console.log(resp.status); // el código de estado = 200 o código = 400 etc.
+				console.log(resp.text()); // Intentará devolver el resultado exacto como cadena (string)
+				return resp.json(); // (regresa una promesa) will try to parse the result as json as return a promise that you can .then for results
+			})
+			.then((data) => {
+				//Aquí es donde debe comenzar tu código después de que finalice la búsqueda
+				console.log(data); //esto imprimirá en la consola el objeto exacto recibido del servidor
+			})
+			.catch((error) => {
+				//manejo de errores
+				console.log(error);
+			});
+	}, [
+		{
+
+		}
+	]);
+
 	return (
 		<div className="container">
 			<div className="row d-flex justify-content-center">
-				<h1>ToDo List</h1>
+				<h1>Lista de Tareas</h1>
 			</div>
 			<div className="row border-top border-right border-left">
 				<input
