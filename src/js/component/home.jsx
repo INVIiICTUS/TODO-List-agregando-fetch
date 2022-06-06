@@ -24,8 +24,7 @@ const Home = () => {
 		fetch("https://assets.breatheco.de/apis/fake/todos/user/INVIiICTUS", {
 			method: "PUT",
 			body: JSON.stringify(todos),
-			headers: {s				"Content-Type": "application/json",
-			},
+			headers: { "Content-Type": "application/json" },
 		})
 			.then((resp) => {
 				console.log(resp.ok); // Será true (verdad) si la respuesta es exitosa.
@@ -41,11 +40,7 @@ const Home = () => {
 				//manejo de errores
 				console.log(error);
 			});
-	}, [
-		{
-
-		}
-	]);
+	});
 
 	return (
 		<div className="container">
